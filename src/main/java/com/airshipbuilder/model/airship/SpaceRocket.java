@@ -10,6 +10,11 @@ public class SpaceRocket extends Airship {
     private List<Rocket> _rockets;
     private Cabin _cabin;
 
+    public SpaceRocket(List<Rocket> rockets, Cabin cabin) {
+        _rockets = rockets;
+        _cabin = cabin;
+    }
+
     public List<Rocket> getRockets() {
         return _rockets;
     }
@@ -26,5 +31,31 @@ public class SpaceRocket extends Airship {
     @Override
     public int getWeight() {
         return 0;
+    }
+
+    public static class SpaceRocketBuilder {
+        private List<Rocket> _rockets;
+        private Cabin _cabin;
+
+        private SpaceRocketBuilder() {
+        }
+
+        public static SpaceRocketBuilder newInstance() {
+            return new SpaceRocketBuilder();
+        }
+
+        public SpaceRocketBuilder addCabin(Cabin cabin) {
+            _cabin = cabin;
+            return this;
+        }
+
+        public SpaceRocketBuilder addRockets(List<Rocket> rockets) {
+            _rockets = rockets;
+            return this;
+        }
+
+        public SpaceRocket build() {
+            return new SpaceRocket(_rockets, _cabin);
+        }
     }
 }

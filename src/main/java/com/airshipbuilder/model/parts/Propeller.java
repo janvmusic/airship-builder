@@ -3,22 +3,27 @@ package com.airshipbuilder.model.parts;
 import com.airshipbuilder.model.materials.MaterialType;
 
 public class Propeller {
-    private int _propellerWeigth;
+    private int _propellerWeight;
     private MaterialType _materialType;
 
-    public int getPropellerWeigth() {
-        return _propellerWeigth;
+    public Propeller(int propellerWeight, MaterialType materialType) {
+        _propellerWeight = propellerWeight;
+        _materialType = materialType;
+    }
+
+    public int getPropellerWeight() {
+        return _propellerWeight;
     }
 
     public MaterialType getMaterialType() {
         return _materialType;
     }
 
-    public int totalWeigth() {
+    public int getTotalWeight() {
         return 0;
     }
 
-    public int totalPrice() {
+    public int getTotalPrice() {
         return 0;
     }
 }

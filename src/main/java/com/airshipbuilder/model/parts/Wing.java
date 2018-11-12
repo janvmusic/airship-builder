@@ -3,22 +3,27 @@ package com.airshipbuilder.model.parts;
 import com.airshipbuilder.model.materials.MaterialType;
 
 public class Wing {
-    private int _wingWeigth;
+    private int _wingWeight;
     private MaterialType _materialType;
 
-    public int getWingWeigth() {
-        return _wingWeigth;
+    public Wing(int wingWeight, MaterialType materialType) {
+        _wingWeight = wingWeight;
+        _materialType = materialType;
+    }
+
+    public int getWingWeight() {
+        return _wingWeight;
     }
 
     public MaterialType getMaterialType() {
         return _materialType;
     }
 
-    public int totalWeigth() {
+    public int getTotalWeight() {
         return 0;
     }
 
-    public int totalPrice() {
+    public int getTotalPrice() {
         return 0;
     }
 }
