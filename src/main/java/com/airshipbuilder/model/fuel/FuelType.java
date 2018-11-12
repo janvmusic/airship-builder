@@ -1,4 +1,9 @@
 package com.airshipbuilder.model.fuel;
 
-public class FuelType {
+public enum FuelType {
+    AIR_FUEL,
+    BATTERY,
+    DIESEL,
+    GASOLINE,
+    WATER
 }

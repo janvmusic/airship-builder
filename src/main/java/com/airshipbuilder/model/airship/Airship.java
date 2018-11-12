@@ -7,6 +7,7 @@ abstract class Airship {
 
     private FuelType _fuelType;
     private AirshipType _airshipType;
+    private int _fuelCapacity;
 
     public abstract int getTotalPrice();
     public abstract int getWeight();
@@ -17,5 +18,9 @@ abstract class Airship {
 
     public AirshipType getAirshipType() {
         return _airshipType;
+    }
+
+    public int getFuelCapacity() {
+        return _fuelCapacity;
     }
 }
