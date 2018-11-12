@@ -24,4 +24,4 @@ taget/
 
 # Intellij Idea
 .idea/
-.iml
+*.iml
