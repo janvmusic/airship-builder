@@ -1,5 +1,5 @@
 package com.airshipbuilder.service;
 
-public class PartFactoryService {
+public interface PartFactoryService {
 
 }

@@ -1,7 +1,9 @@
 package com.airshipbuilder.model.type;
 
 public enum AirshipType {
-    COMMERCIAL,
-    MILITAR,
-    PHOTOGRAPHY
+    AIRPLANE,
+    DRONE,
+    HELICOPTER,
+    JET,
+    SPACE_ROCKET
 }

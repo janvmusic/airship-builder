@@ -1,5 +1,10 @@
 package com.airshipbuilder.service;
 
-public class AirshipFactoryService {
+import com.airshipbuilder.model.airship.Airship;
+import com.airshipbuilder.model.type.AirshipType;
+
+public interface AirshipFactoryService {
+
+    Airship createAirship(AirshipType airshipType, String inputValues);
 
 }

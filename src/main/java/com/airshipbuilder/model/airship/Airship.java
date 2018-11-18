@@ -1,12 +1,12 @@
 package com.airshipbuilder.model.airship;
 
 import com.airshipbuilder.model.fuel.FuelType;
-import com.airshipbuilder.model.type.AirshipType;
+import com.airshipbuilder.model.type.AirshipCategoryType;
 
-abstract class Airship {
+public abstract class Airship {
 
     private FuelType _fuelType;
-    private AirshipType _airshipType;
+    private AirshipCategoryType _airshipCategoryType;
     private int _fuelCapacity;
 
     public abstract int getTotalPrice();
@@ -16,8 +16,8 @@ abstract class Airship {
         return _fuelType;
     }
 
-    public AirshipType getAirshipType() {
-        return _airshipType;
+    public AirshipCategoryType getAirshipType() {
+        return _airshipCategoryType;
     }
 
     public int getFuelCapacity() {

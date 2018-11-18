@@ -1,0 +1,32 @@
+[
+  '{{repeat(5, 15)}}',
+  {
+    airshipType: '{{random("AIRPLANE", "DRONE", "HELICOPTER", "JET","SPACE_ROCKET")}}',
+    fuelType: '{{random("AIR_FUEL", "BATTERY", "DIESEL", "GASOLINE","WATER)}}',
+    cabin: {
+      materialType: '{{random("PLASTIC", "STEEL", "TITANIUM", "WOOD")}}',
+      cabinWeight: '{{integer(1, 999)}}'
+    },
+    propellers: [
+      '{{repeat(0,8)}}',
+      {
+        materialType: '{{random("PLASTIC", "STEEL", "TITANIUM", "WOOD")}}',
+        weight: '{{integer(1, 999)}}'
+      }
+    ],
+    wings: [
+      '{{repeat(0,4)}}',
+      {
+        materialType: '{{random("PLASTIC", "STEEL", "TITANIUM", "WOOD")}}',
+        weight: '{{integer(1, 999)}}'
+      }
+    ],
+    rockets: [
+      '{{repeat(0,4)}}',
+      {
+        materialType: '{{random("PLASTIC", "STEEL", "TITANIUM", "WOOD")}}',
+        weight: '{{integer(1, 999)}}'
+      }
+    ]
+  }
+]
