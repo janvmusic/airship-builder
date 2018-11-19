@@ -36,12 +36,18 @@ public class Jet extends Airship {
 
     @Override
     public int getTotalPrice() {
-        return 0;
+        int rocketsTotalPrice = _rockets.stream().mapToInt(Rocket::getTotalPrice).sum();
+        int wingsTotalPrice = _wings.stream().mapToInt(Wing::getTotalPrice).sum();
+
+        return _cabin.getTotalPrice() + rocketsTotalPrice + wingsTotalPrice;
     }
 
     @Override
     public int getWeight() {
-        return 0;
+        int rocketsTotalWeight = _rockets.stream().mapToInt(Rocket::getRocketWeight).sum();
+        int wingsTotalWeight = _wings.stream().mapToInt(Wing::getWingWeight).sum();
+
+        return _cabin.getCabinWeight() + rocketsTotalWeight + wingsTotalWeight;
     }
 
     public static class JetBuilder extends AirshipBuilder {

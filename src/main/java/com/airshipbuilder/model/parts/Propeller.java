@@ -19,11 +19,7 @@ public class Propeller {
         return _materialType;
     }
 
-    public int getTotalWeight() {
-        return 0;
-    }
-
     public int getTotalPrice() {
-        return 0;
+        return _materialType.getUnitPrice() * _propellerWeight;
     }
 }

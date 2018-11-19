@@ -35,12 +35,20 @@ public class Drone extends Airship {
 
     @Override
     public int getTotalPrice() {
-        return 0;
+        int propellersTotalPrice = _propellers.stream().mapToInt(Propeller::getTotalPrice).sum();
+        int rocketsTotalPrice = _rockets.stream().mapToInt(Rocket::getTotalPrice).sum();
+        int wingsTotalPrice = _wings.stream().mapToInt(Wing::getTotalPrice).sum();
+
+        return propellersTotalPrice + rocketsTotalPrice + wingsTotalPrice;
     }
 
     @Override
     public int getWeight() {
-        return 0;
+        int propellersTotalWeight = _propellers.stream().mapToInt(Propeller::getPropellerWeight).sum();
+        int rocketsTotalWeight = _rockets.stream().mapToInt(Rocket::getRocketWeight).sum();
+        int wingsTotalWeight = _wings.stream().mapToInt(Wing::getWingWeight).sum();
+
+        return propellersTotalWeight + rocketsTotalWeight + wingsTotalWeight;
     }
 
     public static class DroneBuilder extends AirshipBuilder {

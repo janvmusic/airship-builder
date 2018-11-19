@@ -31,12 +31,16 @@ public class SpaceRocket extends Airship {
 
     @Override
     public int getTotalPrice() {
-        return 0;
+        int rocketsTotalPrice = _rockets.stream().mapToInt(Rocket::getTotalPrice).sum();
+
+        return _cabin.getTotalPrice() + rocketsTotalPrice;
     }
 
     @Override
     public int getWeight() {
-        return 0;
+        int rocketsTotalWeight = _rockets.stream().mapToInt(Rocket::getRocketWeight).sum();
+
+        return _cabin.getCabinWeight() + rocketsTotalWeight;
     }
 
     public static class SpaceRocketBuilder extends AirshipBuilder {

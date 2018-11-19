@@ -31,12 +31,14 @@ public class Helicopter extends Airship {
 
     @Override
     public int getTotalPrice() {
-        return 0;
+        int propellersTotalPrice = _propellers.stream().mapToInt(Propeller::getTotalPrice).sum();
+        return _cabin.getTotalPrice() + propellersTotalPrice;
     }
 
     @Override
     public int getWeight() {
-        return 0;
+        int propellersTotalWeight = _propellers.stream().mapToInt(Propeller::getPropellerWeight).sum();
+        return _cabin.getCabinWeight() + propellersTotalWeight;
     }
 
     public static class HelicopterBuilder extends AirshipBuilder {

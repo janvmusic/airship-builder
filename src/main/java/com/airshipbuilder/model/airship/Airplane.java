@@ -38,12 +38,18 @@ public class Airplane extends Airship {
 
     @Override
     public int getTotalPrice() {
-        return 0;
+        int propellersTotalPrice = _propellers.stream().mapToInt(Propeller::getTotalPrice).sum();
+        int wingsTotalPrice = _wings.stream().mapToInt(Wing::getTotalPrice).sum();
+
+        return _cabin.getTotalPrice() + propellersTotalPrice + wingsTotalPrice;
     }
 
     @Override
     public int getWeight() {
-        return 0;
+        int propellerTotalWeight = _propellers.stream().mapToInt(Propeller::getPropellerWeight).sum();
+        int wingsTotalWeight = _wings.stream().mapToInt(Wing::getWingWeight).sum();
+
+        return _cabin.getCabinWeight() + propellerTotalWeight + wingsTotalWeight;
     }
 
     public static class AirplaneBuilder extends AirshipBuilder {
