@@ -1,6 +1,7 @@
 [
   '{{repeat(5, 15)}}',
   {
+    rank: '{{integer(1, 10)}}',
     airshipType: '{{random("AIRPLANE", "DRONE", "HELICOPTER", "JET","SPACE_ROCKET")}}',
     fuelType: '{{random("AIR_FUEL", "BATTERY", "DIESEL", "GASOLINE","WATER")}}',
     fuelCapacity: '{{integer(1, 50)}}',
