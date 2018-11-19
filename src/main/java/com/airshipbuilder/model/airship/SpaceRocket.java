@@ -37,12 +37,9 @@ public class SpaceRocket extends Airship {
         return 0;
     }
 
-    public static class SpaceRocketBuilder {
+    public static class SpaceRocketBuilder extends AirshipBuilder {
         private List<Rocket> _rockets = new ArrayList<>();
         private Cabin _cabin;
-        private FuelType _fuelType;
-        private int _fuelCapacity;
-        private AirshipCategoryType _airshipCategoryType;
 
         private SpaceRocketBuilder() {
         }
@@ -61,23 +58,8 @@ public class SpaceRocket extends Airship {
             return this;
         }
 
-        public SpaceRocketBuilder withFuelType(FuelType fuelType) {
-            _fuelType = fuelType;
-            return this;
-        }
-
-        public SpaceRocketBuilder withFuelCapacity(int fuelCapacity) {
-            _fuelCapacity = fuelCapacity;
-            return this;
-        }
-
-        public SpaceRocketBuilder withCategory(AirshipCategoryType airshipCategoryType) {
-            _airshipCategoryType = airshipCategoryType;
-            return this;
-        }
-
         public SpaceRocket build() {
-            return new SpaceRocket(_rockets, _cabin, _fuelCapacity, _fuelType, _airshipCategoryType);
+            return new SpaceRocket(_rockets, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType());
         }
     }
 }

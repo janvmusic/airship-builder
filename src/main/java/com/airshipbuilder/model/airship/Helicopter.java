@@ -37,12 +37,9 @@ public class Helicopter extends Airship {
         return 0;
     }
 
-    public static class HelicopterBuilder {
+    public static class HelicopterBuilder extends AirshipBuilder {
         private List<Propeller> _propellers = new ArrayList<>();
         private Cabin _cabin;
-        private int _fuelCapacity;
-        private FuelType _fuelType;
-        private AirshipCategoryType _airshipCategoryType;
 
         private HelicopterBuilder() {
         }
@@ -61,23 +58,8 @@ public class Helicopter extends Airship {
             return this;
         }
 
-        public HelicopterBuilder withFuelType(FuelType fuelType) {
-            _fuelType = fuelType;
-            return this;
-        }
-
-        public HelicopterBuilder withFuelCapacity(int fuelCapacity) {
-            _fuelCapacity = fuelCapacity;
-            return this;
-        }
-
-        public HelicopterBuilder withCategory(AirshipCategoryType airshipCategoryType) {
-            _airshipCategoryType = airshipCategoryType;
-            return this;
-        }
-
         public Helicopter build() {
-            return new Helicopter(_propellers, _cabin, _fuelCapacity, _fuelType, _airshipCategoryType);
+            return new Helicopter(_propellers, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType());
         }
     }
 }

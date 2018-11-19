@@ -43,13 +43,10 @@ public class Drone extends Airship {
         return 0;
     }
 
-    public static class DroneBuilder {
+    public static class DroneBuilder extends AirshipBuilder {
         private List<Wing> _wings = new ArrayList<>();
         private List<Propeller> _propellers = new ArrayList<>();
         private List<Rocket> _rockets = new ArrayList<>();
-        private int _fuelCapacity;
-        private FuelType _fuelType;
-        private AirshipCategoryType _airshipCategoryType;
 
         private DroneBuilder() {
         }
@@ -73,24 +70,8 @@ public class Drone extends Airship {
             return this;
         }
 
-
-        public DroneBuilder withFuelType(FuelType fuelType) {
-            _fuelType = fuelType;
-            return this;
-        }
-
-        public DroneBuilder withFuelCapacity(int fuelCapacity) {
-            _fuelCapacity = fuelCapacity;
-            return this;
-        }
-
-        public DroneBuilder withCategory(AirshipCategoryType airshipCategoryType) {
-            _airshipCategoryType = airshipCategoryType;
-            return this;
-        }
-
         public Drone build() {
-            return new Drone(_wings, _propellers, _rockets, _fuelCapacity, _fuelType, _airshipCategoryType);
+            return new Drone(_wings, _propellers, _rockets, getFuelCapacity(), getFuelType(), getAirshipCategoryType());
         }
     }
 }
