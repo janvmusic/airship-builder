@@ -3,6 +3,8 @@ package com.airshipbuilder.model.airship;
 import com.airshipbuilder.model.fuel.FuelType;
 import com.airshipbuilder.model.parts.Cabin;
 import com.airshipbuilder.model.parts.Propeller;
+import com.airshipbuilder.model.parts.Rocket;
+import com.airshipbuilder.model.parts.Wing;
 import com.airshipbuilder.model.type.AirshipCategoryType;
 
 import java.util.ArrayList;
@@ -19,12 +21,12 @@ public class Helicopter extends Airship {
         _cabin = cabin;
     }
 
-    public List<Propeller> getPropellers() {
-        return _propellers;
-    }
-
     public Cabin getCabin() {
         return _cabin;
+    }
+
+    public List<Propeller> getPropellers() {
+        return _propellers;
     }
 
     @Override
@@ -53,8 +55,21 @@ public class Helicopter extends Airship {
             return this;
         }
 
+        @Override
         public HelicopterBuilder addPropeller(Propeller propeller) {
             _propellers.add(propeller);
+            return this;
+        }
+
+        @Override
+        public HelicopterBuilder addRocket(Rocket rocket) {
+            System.out.println("Method not implemented: addRocket for helicopter");
+            return this;
+        }
+
+        @Override
+        public HelicopterBuilder addWing(Wing wing) {
+            System.out.println("Method not implemented: addWing for helicopter");
             return this;
         }
 

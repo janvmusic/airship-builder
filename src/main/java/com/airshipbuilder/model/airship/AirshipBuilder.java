@@ -1,12 +1,21 @@
 package com.airshipbuilder.model.airship;
 
 import com.airshipbuilder.model.fuel.FuelType;
+import com.airshipbuilder.model.parts.Propeller;
+import com.airshipbuilder.model.parts.Rocket;
+import com.airshipbuilder.model.parts.Wing;
 import com.airshipbuilder.model.type.AirshipCategoryType;
 
-public class AirshipBuilder {
+public abstract class AirshipBuilder {
     private FuelType _fuelType;
     private int _fuelCapacity;
     private AirshipCategoryType _airshipCategoryType;
+
+    public abstract AirshipBuilder addPropeller(Propeller propeller);
+
+    public abstract AirshipBuilder addRocket(Rocket rocket);
+
+    public abstract AirshipBuilder addWing(Wing wing);
 
     public AirshipBuilder withFuelType(FuelType fuelType) {
         _fuelType = fuelType;
@@ -23,15 +32,15 @@ public class AirshipBuilder {
         return this;
     }
 
-    public FuelType getFuelType() {
+    FuelType getFuelType() {
         return _fuelType;
     }
 
-    public int getFuelCapacity() {
+    int getFuelCapacity() {
         return _fuelCapacity;
     }
 
-    public AirshipCategoryType getAirshipCategoryType() {
+    AirshipCategoryType getAirshipCategoryType() {
         return _airshipCategoryType;
     }
 }

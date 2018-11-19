@@ -52,27 +52,17 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
 
             switch (partType) {
                 case CABIN:
-                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
-                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
+                    Cabin cabin = createCabin(inputValues, airshipPartType);
                     airplaneBuilder.addCabin(cabin);
                     break;
                 case PROPELLERS:
-                    JSONArray propellerElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object propellerElements : propellerElementsJson) {
-                        Propeller propeller = partFactoryService.createPropeller((JSONObject) propellerElements);
-                        airplaneBuilder.addPropellers(propeller);
-                    }
+                    addPropellers(inputValues, airplaneBuilder, airshipPartType);
                     break;
                 case WINGS:
-                    JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object wingElements : wingElementsJson) {
-                        Wing wing = partFactoryService.createWing((JSONObject) wingElements);
-                        airplaneBuilder.addWings(wing);
-                    }
+                    addWings(inputValues, airplaneBuilder, airshipPartType);
                     break;
                 case FUEL_TYPE:
-                    String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
+                    FuelType fuelType = createFuelType(inputValues, airshipPartType);
                     airplaneBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -80,9 +70,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     airplaneBuilder.withFuelCapacity(fuelCapacity.intValue());
                     break;
                 case AIRSHIP_CATEGORY:
-                    String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType = // 
-                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
+                    AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     airplaneBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -102,29 +90,16 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
 
             switch (partType) {
                 case PROPELLERS:
-                    JSONArray propellerElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object propellerElements : propellerElementsJson) {
-                        Propeller propeller = partFactoryService.createPropeller((JSONObject) propellerElements);
-                        droneBuilder.addPropeller(propeller);
-                    }
+                    addPropellers(inputValues, droneBuilder, airshipPartType);
                     break;
                 case ROCKET:
-                    JSONArray rocketElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object rocketElements : rocketElementsJson) {
-                        Rocket rocket = partFactoryService.createRocket((JSONObject) rocketElements);
-                        droneBuilder.addRocket(rocket);
-                    }
+                    addRockets(inputValues, droneBuilder, airshipPartType);
                     break;
                 case WINGS:
-                    JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object wingElements : wingElementsJson) {
-                        Wing wing = partFactoryService.createWing((JSONObject) wingElements);
-                        droneBuilder.addWing(wing);
-                    }
+                    addWings(inputValues, droneBuilder, airshipPartType);
                     break;
                 case FUEL_TYPE:
-                    String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
+                    FuelType fuelType = createFuelType(inputValues, airshipPartType);
                     droneBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -132,9 +107,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     droneBuilder.withFuelCapacity(fuelCapacity.intValue());
                     break;
                 case AIRSHIP_CATEGORY:
-                    String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType =
-                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
+                    AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     droneBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -154,20 +127,14 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
 
             switch (partType) {
                 case CABIN:
-                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
-                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
+                    Cabin cabin = createCabin(inputValues, airshipPartType);
                     helicopterBuilder.addCabin(cabin);
                     break;
                 case PROPELLERS:
-                    JSONArray propellerElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object propellerElements : propellerElementsJson) {
-                        Propeller propeller = partFactoryService.createPropeller((JSONObject) propellerElements);
-                        helicopterBuilder.addPropeller(propeller);
-                    }
+                    addPropellers(inputValues, helicopterBuilder, airshipPartType);
                     break;
                 case FUEL_TYPE:
-                    String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
+                    FuelType fuelType = createFuelType(inputValues, airshipPartType);
                     helicopterBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -175,9 +142,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     helicopterBuilder.withFuelCapacity(fuelCapacity.intValue());
                     break;
                 case AIRSHIP_CATEGORY:
-                    String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType =
-                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
+                    AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     helicopterBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -198,27 +163,17 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
 
             switch (partType) {
                 case CABIN:
-                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
-                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
+                    Cabin cabin = createCabin(inputValues, airshipPartType);
                     jetBuilder.addCabin(cabin);
                     break;
                 case ROCKET:
-                    JSONArray rocketElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object rocketElements : rocketElementsJson) {
-                        Rocket rocket = partFactoryService.createRocket((JSONObject) rocketElements);
-                        jetBuilder.addRockets(rocket);
-                    }
+                    addRockets(inputValues, jetBuilder, airshipPartType);
                     break;
                 case WINGS:
-                    JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object wingElements : wingElementsJson) {
-                        Wing wing = partFactoryService.createWing((JSONObject) wingElements);
-                        jetBuilder.addWings(wing);
-                    }
+                    addWings(inputValues, jetBuilder, airshipPartType);
                     break;
                 case FUEL_TYPE:
-                    String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
+                    FuelType fuelType = createFuelType(inputValues, airshipPartType);
                     jetBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -226,9 +181,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     jetBuilder.withFuelCapacity(fuelCapacity.intValue());
                     break;
                 case AIRSHIP_CATEGORY:
-                    String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType =
-                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
+                    AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     jetBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -248,20 +201,14 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
 
             switch (partType) {
                 case CABIN:
-                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
-                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
+                    Cabin cabin = createCabin(inputValues, airshipPartType);
                     spaceRocketBuilder.addCabin(cabin);
                     break;
                 case ROCKET:
-                    JSONArray rocketElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object rocketElements : rocketElementsJson) {
-                        Rocket rocket = partFactoryService.createRocket((JSONObject) rocketElements);
-                        spaceRocketBuilder.addRockets(rocket);
-                    }
+                    addRockets(inputValues, spaceRocketBuilder, airshipPartType);
                     break;
                 case FUEL_TYPE:
-                    String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
+                    FuelType fuelType = createFuelType(inputValues, airshipPartType);
                     spaceRocketBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -269,9 +216,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     spaceRocketBuilder.withFuelCapacity(fuelCapacity.intValue());
                     break;
                 case AIRSHIP_CATEGORY:
-                    String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType =
-                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
+                    AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     spaceRocketBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -279,6 +224,49 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
         }
 
         return spaceRocketBuilder.build();
+    }
+
+    private Cabin createCabin(JSONObject inputValues, String airshipPartType) throws Exception {
+        JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
+        return partFactoryService.createCabin(cabinElementsJson);
+    }
+
+    private void addPropellers(JSONObject inputValues, AirshipBuilder airshipBuilder, String airshipPartType)
+            throws Exception {
+        JSONArray propellerElementsJson = (JSONArray) inputValues.get(airshipPartType);
+        for (Object propellerElements : propellerElementsJson) {
+            Propeller propeller = partFactoryService.createPropeller((JSONObject) propellerElements);
+            airshipBuilder.addPropeller(propeller);
+        }
+    }
+
+    private void addRockets(JSONObject inputValues, AirshipBuilder airshipBuilder, String airshipPartType)
+            throws Exception {
+        JSONArray rocketElementsJson = (JSONArray) inputValues.get(airshipPartType);
+        for (Object rocketElements : rocketElementsJson) {
+            Rocket rocket = partFactoryService.createRocket((JSONObject) rocketElements);
+            airshipBuilder.addRocket(rocket);
+        }
+    }
+
+    private void addWings(JSONObject inputValues, AirshipBuilder airshipBuilder, String airshipPartType)
+            throws Exception {
+        JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
+        for (Object wingElements : wingElementsJson) {
+            Wing wing = partFactoryService.createWing((JSONObject) wingElements);
+            airshipBuilder.addWing(wing);
+        }
+    }
+
+    private FuelType createFuelType(JSONObject inputValues, String airshipPartType) throws Exception {
+        String fuelTypeString = (String) inputValues.get(airshipPartType);
+        return FuelType.getFuelTypeFromText(fuelTypeString);
+    }
+
+    private AirshipCategoryType getAirshipCategoryType(JSONObject inputValues, String airshipPartType)
+            throws Exception {
+        String categoryTypeString = (String) inputValues.get(airshipPartType);
+        return AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
     }
 
     @SuppressWarnings("ConstantConditions")

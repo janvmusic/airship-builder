@@ -21,16 +21,16 @@ public class Drone extends Airship {
         _rockets = rockets;
     }
 
-    public List<Wing> getWings() {
-        return _wings;
-    }
-
     public List<Propeller> getPropellers() {
         return _propellers;
     }
 
     public List<Rocket> getRockets() {
         return _rockets;
+    }
+
+    public List<Wing> getWings() {
+        return _wings;
     }
 
     @Override
@@ -55,18 +55,21 @@ public class Drone extends Airship {
             return new DroneBuilder();
         }
 
-        public DroneBuilder addWing(Wing wings) {
-            _wings.add(wings);
-            return this;
-        }
-
+        @Override
         public DroneBuilder addPropeller(Propeller propeller) {
             _propellers.add(propeller);
             return this;
         }
 
+        @Override
         public DroneBuilder addRocket(Rocket rocket) {
             _rockets.add(rocket);
+            return this;
+        }
+
+        @Override
+        public DroneBuilder addWing(Wing wings) {
+            _wings.add(wings);
             return this;
         }
 
