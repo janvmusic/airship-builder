@@ -14,8 +14,9 @@ public class Drone extends Airship {
     private List<Propeller> _propellers;
     private List<Rocket> _rockets;
 
-    private Drone(List<Wing> wings, List<Propeller> propellers, List<Rocket> rockets, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
-        super(_fuelType, _airshipCategoryType, _fuelCapacity);
+    private Drone(List<Wing> wings, List<Propeller> propellers, List<Rocket> rockets, int _fuelCapacity,
+                  FuelType _fuelType, AirshipCategoryType _airshipCategoryType, int rank) {
+        super(_fuelType, _airshipCategoryType, _fuelCapacity, rank);
         _wings = wings;
         _propellers = propellers;
         _rockets = rockets;
@@ -82,7 +83,8 @@ public class Drone extends Airship {
         }
 
         public Drone build() {
-            return new Drone(_wings, _propellers, _rockets, getFuelCapacity(), getFuelType(), getAirshipCategoryType());
+            return new Drone(_wings, _propellers, _rockets, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
+                    getRank());
         }
     }
 }

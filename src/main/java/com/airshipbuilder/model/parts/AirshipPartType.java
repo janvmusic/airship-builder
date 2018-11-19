@@ -9,7 +9,8 @@ public enum AirshipPartType {
     FUEL_CAPACITY("fuelCapacity"),
     MATERIAL_TYPE("materialType"),
     AIRSHIP_CATEGORY("categoryType"),
-    AIRSHIP_TYPE("airshipType");
+    AIRSHIP_TYPE("airshipType"),
+    RANK("rank");
 
     private String _partName;
 

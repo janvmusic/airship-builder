@@ -15,8 +15,9 @@ public class Jet extends Airship {
     private List<Rocket> _rockets;
     private Cabin _cabin;
 
-    private Jet(List<Wing> wings, List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
-        super(_fuelType, _airshipCategoryType, _fuelCapacity);
+    private Jet(List<Wing> wings, List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType,
+                AirshipCategoryType _airshipCategoryType, int rank) {
+        super(_fuelType, _airshipCategoryType, _fuelCapacity, rank);
         _wings = wings;
         _rockets = rockets;
         _cabin = cabin;
@@ -86,7 +87,8 @@ public class Jet extends Airship {
         }
 
         public Jet build() {
-            return new Jet(_wings, _rockets, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType());
+            return new Jet(_wings, _rockets, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
+                    getRank());
         }
     }
 }

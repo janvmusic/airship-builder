@@ -10,6 +10,7 @@ public abstract class AirshipBuilder {
     private FuelType _fuelType;
     private int _fuelCapacity;
     private AirshipCategoryType _airshipCategoryType;
+    private int _rank;
 
     public abstract AirshipBuilder addPropeller(Propeller propeller);
 
@@ -32,6 +33,11 @@ public abstract class AirshipBuilder {
         return this;
     }
 
+    public AirshipBuilder withRank(int rank) {
+        _rank = rank;
+        return this;
+    }
+
     FuelType getFuelType() {
         return _fuelType;
     }
@@ -42,5 +48,9 @@ public abstract class AirshipBuilder {
 
     AirshipCategoryType getAirshipCategoryType() {
         return _airshipCategoryType;
+    }
+
+    public int getRank() {
+        return _rank;
     }
 }

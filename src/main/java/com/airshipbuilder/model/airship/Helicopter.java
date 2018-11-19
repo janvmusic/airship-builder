@@ -15,8 +15,9 @@ public class Helicopter extends Airship {
     private List<Propeller> _propellers;
     private Cabin _cabin;
 
-    private Helicopter(List<Propeller> propellers, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
-        super(_fuelType, _airshipCategoryType, _fuelCapacity);
+    private Helicopter(List<Propeller> propellers, Cabin cabin, int _fuelCapacity, FuelType _fuelType,
+                       AirshipCategoryType _airshipCategoryType, int rank) {
+        super(_fuelType, _airshipCategoryType, _fuelCapacity, rank);
         _propellers = propellers;
         _cabin = cabin;
     }
@@ -76,7 +77,8 @@ public class Helicopter extends Airship {
         }
 
         public Helicopter build() {
-            return new Helicopter(_propellers, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType());
+            return new Helicopter(_propellers, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
+                    getRank());
         }
     }
 }

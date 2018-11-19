@@ -15,8 +15,9 @@ public class SpaceRocket extends Airship {
     private List<Rocket> _rockets;
     private Cabin _cabin;
 
-    private SpaceRocket(List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
-        super(_fuelType, _airshipCategoryType, _fuelCapacity);
+    private SpaceRocket(List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType,
+                        AirshipCategoryType _airshipCategoryType, int rank) {
+        super(_fuelType, _airshipCategoryType, _fuelCapacity, rank);
         _rockets = rockets;
         _cabin = cabin;
     }
@@ -79,7 +80,8 @@ public class SpaceRocket extends Airship {
 
 
         public SpaceRocket build() {
-            return new SpaceRocket(_rockets, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType());
+            return new SpaceRocket(_rockets, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
+                    getRank());
         }
     }
 }

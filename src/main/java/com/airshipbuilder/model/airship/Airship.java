@@ -8,11 +8,13 @@ public abstract class Airship {
     private FuelType _fuelType;
     private AirshipCategoryType _airshipCategoryType;
     private int _fuelCapacity;
+    private int _rank;
 
-    Airship(FuelType fuelType, AirshipCategoryType airshipCategoryType, int fuelCapacity) {
+    Airship(FuelType fuelType, AirshipCategoryType airshipCategoryType, int fuelCapacity, int rank) {
         _fuelType = fuelType;
         _airshipCategoryType = airshipCategoryType;
         _fuelCapacity = fuelCapacity;
+        _rank = rank;
     }
 
     public abstract int getTotalPrice();
@@ -29,5 +31,9 @@ public abstract class Airship {
 
     public int getFuelCapacity() {
         return _fuelCapacity;
+    }
+
+    public int getRank() {
+        return _rank;
     }
 }
