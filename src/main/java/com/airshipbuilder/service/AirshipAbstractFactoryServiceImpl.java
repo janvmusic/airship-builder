@@ -72,6 +72,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                 case AIRSHIP_CATEGORY:
                     AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     airplaneBuilder.withCategory(airshipCategoryType);
+                    break;
                 case RANK:
                     Long rank = (Long) inputValues.get(airshipPartType);
                     airplaneBuilder.withRank(rank.intValue());
@@ -113,6 +114,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                 case AIRSHIP_CATEGORY:
                     AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     droneBuilder.withCategory(airshipCategoryType);
+                    break;
                 case RANK:
                     Long rank = (Long) inputValues.get(airshipPartType);
                     droneBuilder.withRank(rank.intValue());
@@ -152,6 +154,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                 case AIRSHIP_CATEGORY:
                     AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     helicopterBuilder.withCategory(airshipCategoryType);
+                    break;
                 case RANK:
                     Long rank = (Long) inputValues.get(airshipPartType);
                     helicopterBuilder.withRank(rank.intValue());
@@ -195,6 +198,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                 case AIRSHIP_CATEGORY:
                     AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     jetBuilder.withCategory(airshipCategoryType);
+                    break;
                 case RANK:
                     Long rank = (Long) inputValues.get(airshipPartType);
                     jetBuilder.withRank(rank.intValue());
@@ -234,6 +238,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                 case AIRSHIP_CATEGORY:
                     AirshipCategoryType airshipCategoryType = getAirshipCategoryType(inputValues, airshipPartType);
                     spaceRocketBuilder.withCategory(airshipCategoryType);
+                    break;
                 case RANK:
                     Long rank = (Long) inputValues.get(airshipPartType);
                     spaceRocketBuilder.withRank(rank.intValue());
