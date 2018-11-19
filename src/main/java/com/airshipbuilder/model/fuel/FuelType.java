@@ -1,9 +1,5 @@
 package com.airshipbuilder.model.fuel;
 
-import com.airshipbuilder.model.materials.MaterialType;
-
-import java.util.Optional;
-
 public enum FuelType {
     AIR_FUEL(100, "air_fuel"),
     BATTERY(2, "battery"),
@@ -19,20 +15,20 @@ public enum FuelType {
         _name = name;
     }
 
+    public static FuelType getFuelTypeFromText(String fuelTypeFromText) throws Exception {
+        for (FuelType fuelType : FuelType.values()) {
+            if (fuelType.getName().equalsIgnoreCase(fuelTypeFromText)) {
+                return fuelType;
+            }
+        }
+        throw new Exception(fuelTypeFromText + " not found");
+    }
+
     public String getName() {
         return _name;
     }
 
     public int getUnitPrice() {
         return _unitPrice;
-    }
-
-    public static Optional<FuelType> getFuelTypeFromText(String text) {
-        for (FuelType fuelType : FuelType.values()) {
-            if (fuelType.getName().equalsIgnoreCase(text)) {
-                return Optional.of(fuelType);
-            }
-        }
-        return Optional.empty();
     }
 }

@@ -1,9 +1,5 @@
 package com.airshipbuilder.model.type;
 
-import com.airshipbuilder.model.materials.MaterialType;
-
-import java.util.Optional;
-
 public enum AirshipCategoryType {
     COMMERCIAL("commercial"),
     MILITARY("military"),
@@ -15,16 +11,16 @@ public enum AirshipCategoryType {
         _name = name;
     }
 
-    public String getName() {
-        return _name;
-    }
-
-    public static Optional<AirshipCategoryType> getAirshipCategoryTypeFromText(String text) {
+    public static AirshipCategoryType getAirshipCategoryTypeFromText(String airshipCategoryTypeFromText) throws Exception {
         for (AirshipCategoryType airshipCategoryType : AirshipCategoryType.values()) {
-            if (airshipCategoryType.getName().equalsIgnoreCase(text)) {
-                return Optional.of(airshipCategoryType);
+            if (airshipCategoryType.getName().equalsIgnoreCase(airshipCategoryTypeFromText)) {
+                return airshipCategoryType;
             }
         }
-        return Optional.empty();
+        throw new Exception(airshipCategoryTypeFromText + " not found");
+    }
+
+    public String getName() {
+        return _name;
     }
 }

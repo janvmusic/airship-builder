@@ -1,7 +1,5 @@
 package com.airshipbuilder.model.parts;
 
-import java.util.Optional;
-
 public enum AirshipPartType {
     CABIN("cabin"),
     PROPELLERS("propellers"),
@@ -19,13 +17,13 @@ public enum AirshipPartType {
         _partName = partName;
     }
 
-    public static Optional<AirshipPartType> getAirshipTypeFromString(String text) {
+    public static AirshipPartType getAirshipTypeFromString(String airshipTypeFromString) throws Exception {
         for (AirshipPartType airshipPartType : AirshipPartType.values()) {
-            if (airshipPartType.getPartName().equalsIgnoreCase(text)) {
-                return Optional.of(airshipPartType);
+            if (airshipPartType.getPartName().equalsIgnoreCase(airshipTypeFromString)) {
+                return airshipPartType;
             }
         }
-        return Optional.empty();
+        throw new Exception(airshipTypeFromString + " not found");
     }
 
     public String getPartName() {

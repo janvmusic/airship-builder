@@ -13,8 +13,7 @@ class PartFactoryServiceImpl implements PartFactoryService {
     public Cabin createCabin(JSONObject cabinElementJson) throws Exception {
         Long weight = (Long) cabinElementJson.get("weight");
         String materialTypeText = (String) cabinElementJson.get("materialType");
-        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText)
-                .orElseThrow(() -> new Exception(materialTypeText + " not found"));
+        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText);
 
         return new Cabin(weight.intValue(), materialType);
     }
@@ -23,8 +22,7 @@ class PartFactoryServiceImpl implements PartFactoryService {
     public Propeller createPropeller(JSONObject propellerJson) throws Exception {
         Long weight = (Long) propellerJson.get("weight");
         String materialTypeText = (String) propellerJson.get("materialType");
-        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText)
-                .orElseThrow(() -> new Exception(materialTypeText + " not found"));
+        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText);
 
         return new Propeller(weight.intValue(), materialType);
     }
@@ -33,8 +31,7 @@ class PartFactoryServiceImpl implements PartFactoryService {
     public Rocket createRocket(JSONObject rocketJson) throws Exception {
         Long weight = (Long) rocketJson.get("weight");
         String materialTypeText = (String) rocketJson.get("materialType");
-        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText)
-                .orElseThrow(() -> new Exception(materialTypeText + " not found"));
+        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText);
 
         return new Rocket(weight.intValue(), materialType);
     }
@@ -43,8 +40,7 @@ class PartFactoryServiceImpl implements PartFactoryService {
     public Wing createWing(JSONObject wingsJson) throws Exception {
         Long weight = (Long) wingsJson.get("weight");
         String materialTypeText = (String) wingsJson.get("materialType");
-        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText)
-                .orElseThrow(() -> new Exception(materialTypeText + " not found"));
+        MaterialType materialType = MaterialType.getMaterialTypeFromText(materialTypeText);
 
         return new Wing(weight.intValue(), materialType);
     }

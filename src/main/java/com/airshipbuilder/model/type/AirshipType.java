@@ -1,7 +1,5 @@
 package com.airshipbuilder.model.type;
 
-import java.util.Optional;
-
 public enum AirshipType {
     AIRPLANE("airplane"),
     DRONE("drone"),
@@ -15,16 +13,16 @@ public enum AirshipType {
         _name = name;
     }
 
-    public String getName() {
-        return _name;
-    }
-
-    public static Optional<AirshipType> getAirshipTypeFromString(String text) {
+    public static AirshipType getAirshipTypeFromString(String airshipTypeFromText) throws Exception {
         for (AirshipType airshipType : AirshipType.values()) {
-            if (airshipType.getName().equalsIgnoreCase(text)) {
-                return Optional.of(airshipType);
+            if (airshipType.getName().equalsIgnoreCase(airshipTypeFromText)) {
+                return airshipType;
             }
         }
-        return Optional.empty();
+        throw new Exception(airshipTypeFromText + " not found");
+    }
+
+    public String getName() {
+        return _name;
     }
 }

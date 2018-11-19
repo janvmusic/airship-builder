@@ -22,8 +22,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
     @Override
     public Airship createAirship(JSONObject airshipJson) throws Exception {
         String airshipTypeFromFile = airshipJson.get("airshipType").toString();
-        AirshipType airshipTypeFromString = AirshipType.getAirshipTypeFromString(airshipTypeFromFile)
-                .orElseThrow(() -> new Exception(airshipTypeFromFile + " not found"));
+        AirshipType airshipTypeFromString = AirshipType.getAirshipTypeFromString(airshipTypeFromFile);
 
         switch (airshipTypeFromString) {
             case AIRPLANE:
@@ -50,8 +49,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
         Set airshipParts = inputValues.keySet();
         for (Object airshipPart : airshipParts) {
             String airshipPartType = (String) airshipPart;
-            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType)
-                    .orElseThrow(() -> new Exception(airshipPartType + " not found"));
+            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
 
             switch (partType) {
                 case CABIN:
@@ -75,8 +73,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case FUEL_TYPE:
                     String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString)
-                            .orElseThrow(() -> new Exception(fuelTypeString + " not found"));
+                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
                     airplaneBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -85,8 +82,8 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case AIRSHIP_CATEGORY:
                     String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType = AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString)
-                            .orElseThrow(() -> new Exception(categoryTypeString + " not found"));
+                    AirshipCategoryType airshipCategoryType = // 
+                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
                     airplaneBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -102,8 +99,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
         Set airshipParts = inputValues.keySet();
         for (Object airshipPart : airshipParts) {
             String airshipPartType = (String) airshipPart;
-            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType)
-                    .orElseThrow(() -> new Exception(airshipPartType + " not found"));
+            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
 
             switch (partType) {
                 case WINGS:
@@ -129,8 +125,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case FUEL_TYPE:
                     String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString)
-                            .orElseThrow(() -> new Exception(fuelTypeString + " not found"));
+                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
                     droneBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -139,8 +134,8 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case AIRSHIP_CATEGORY:
                     String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType = AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString)
-                            .orElseThrow(() -> new Exception(categoryTypeString + " not found"));
+                    AirshipCategoryType airshipCategoryType =
+                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
                     droneBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -156,8 +151,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
         Set airshipParts = inputValues.keySet();
         for (Object airshipPart : airshipParts) {
             String airshipPartType = (String) airshipPart;
-            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType)
-                    .orElseThrow(() -> new Exception(airshipPartType + " not found"));
+            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
 
             switch (partType) {
                 case PROPELLERS:
@@ -174,8 +168,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case FUEL_TYPE:
                     String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString)
-                            .orElseThrow(() -> new Exception(fuelTypeString + " not found"));
+                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
                     helicopterBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -184,8 +177,8 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case AIRSHIP_CATEGORY:
                     String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType = AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString)
-                            .orElseThrow(() -> new Exception(categoryTypeString + " not found"));
+                    AirshipCategoryType airshipCategoryType =
+                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
                     helicopterBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -201,8 +194,8 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
         Set airshipParts = inputValues.keySet();
         for (Object airshipPart : airshipParts) {
             String airshipPartType = (String) airshipPart;
-            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType)
-                    .orElseThrow(() -> new Exception(airshipPartType + " not found"));
+            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
+
 
             switch (partType) {
                 case WINGS:
@@ -226,8 +219,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case FUEL_TYPE:
                     String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString)
-                            .orElseThrow(() -> new Exception(fuelTypeString + " not found"));
+                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
                     jetBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -236,8 +228,8 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case AIRSHIP_CATEGORY:
                     String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType = AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString)
-                            .orElseThrow(() -> new Exception(categoryTypeString + " not found"));
+                    AirshipCategoryType airshipCategoryType =
+                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
                     jetBuilder.withCategory(airshipCategoryType);
                 default:
                     break;
@@ -253,8 +245,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
         Set airshipParts = inputValues.keySet();
         for (Object airshipPart : airshipParts) {
             String airshipPartType = (String) airshipPart;
-            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType)
-                    .orElseThrow(() -> new Exception(airshipPartType + " not found"));
+            AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
 
             switch (partType) {
                 case ROCKET:
@@ -271,8 +262,7 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case FUEL_TYPE:
                     String fuelTypeString = (String) inputValues.get(airshipPartType);
-                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString)
-                            .orElseThrow(() -> new Exception(fuelTypeString + " not found"));
+                    FuelType fuelType = FuelType.getFuelTypeFromText(fuelTypeString);
                     spaceRocketBuilder.withFuelType(fuelType);
                     break;
                 case FUEL_CAPACITY:
@@ -281,8 +271,8 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     break;
                 case AIRSHIP_CATEGORY:
                     String categoryTypeString = (String) inputValues.get(airshipPartType);
-                    AirshipCategoryType airshipCategoryType = AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString)
-                            .orElseThrow(() -> new Exception(categoryTypeString + " not found"));
+                    AirshipCategoryType airshipCategoryType =
+                            AirshipCategoryType.getAirshipCategoryTypeFromText(categoryTypeString);
                     spaceRocketBuilder.withCategory(airshipCategoryType);
                 default:
                     break;

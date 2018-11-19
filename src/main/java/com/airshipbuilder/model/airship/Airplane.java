@@ -15,7 +15,8 @@ public class Airplane extends Airship {
     private List<Propeller> _propellers;
     private Cabin _cabin;
 
-    private Airplane(List<Wing> wings, List<Propeller> propellers, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
+    private Airplane(List<Wing> wings, List<Propeller> propellers, Cabin cabin, int _fuelCapacity,
+                     FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
         super(_fuelType, _airshipCategoryType, _fuelCapacity);
         _wings = wings;
         _propellers = propellers;
