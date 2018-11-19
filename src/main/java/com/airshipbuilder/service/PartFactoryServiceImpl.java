@@ -7,7 +7,7 @@ import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
 import org.json.simple.JSONObject;
 
-public class PartFactoryServiceImpl implements PartFactoryService {
+class PartFactoryServiceImpl implements PartFactoryService {
 
     @Override
     public Cabin createCabin(JSONObject cabinElementJson) throws Exception {

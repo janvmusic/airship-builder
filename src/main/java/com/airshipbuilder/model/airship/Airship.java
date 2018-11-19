@@ -9,7 +9,7 @@ public abstract class Airship {
     private AirshipCategoryType _airshipCategoryType;
     private int _fuelCapacity;
 
-    public Airship(FuelType fuelType, AirshipCategoryType airshipCategoryType, int fuelCapacity) {
+    Airship(FuelType fuelType, AirshipCategoryType airshipCategoryType, int fuelCapacity) {
         _fuelType = fuelType;
         _airshipCategoryType = airshipCategoryType;
         _fuelCapacity = fuelCapacity;

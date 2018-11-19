@@ -6,7 +6,7 @@ import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
 import org.json.simple.JSONObject;
 
-public interface PartFactoryService {
+interface PartFactoryService {
     Cabin createCabin(JSONObject propellerJson) throws Exception;
 
     Propeller createPropeller(JSONObject propellerJson) throws Exception;

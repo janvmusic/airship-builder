@@ -14,7 +14,7 @@ public class Jet extends Airship {
     private List<Rocket> _rockets;
     private Cabin _cabin;
 
-    public Jet(List<Wing> wings, List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
+    private Jet(List<Wing> wings, List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
         super(_fuelType, _airshipCategoryType, _fuelCapacity);
         _wings = wings;
         _rockets = rockets;

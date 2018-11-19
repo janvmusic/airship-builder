@@ -1,252 +1,354 @@
 [
   {
     "airshipType": "HELICOPTER",
-    "fuelType": "GASOLINE",
-    "fuelCapacity": 23,
-    "categoryType": "MILITARY",
+    "fuelType": "WATER",
+    "fuelCapacity": 44,
+    "categoryType": "PHOTOGRAPHY",
     "cabin": {
-      "materialType": "PLASTIC",
-      "weight": 162
+      "materialType": "TITANIUM",
+      "weight": 538
     },
     "propellers": [
       {
+        "materialType": "STEEL",
+        "weight": 792
+      },
+      {
         "materialType": "PLASTIC",
-        "weight": 240
-      },
-      {
-        "materialType": "WOOD",
-        "weight": 490
-      },
-      {
-        "materialType": "STEEL",
-        "weight": 318
-      },
-      {
-        "materialType": "WOOD",
-        "weight": 47
-      },
-      {
-        "materialType": "STEEL",
-        "weight": 273
-      },
-      {
-        "materialType": "WOOD",
-        "weight": 339
-      },
-      {
-        "materialType": "STEEL",
-        "weight": 533
+        "weight": 196
       },
       {
         "materialType": "TITANIUM",
-        "weight": 692
+        "weight": 406
       }
     ],
-    "wings": [
-      {
-        "materialType": "WOOD",
-        "weight": 119
-      },
-      {
-        "materialType": "TITANIUM",
-        "weight": 866
-      }
-    ],
+    "wings": [],
     "rockets": [
       {
-        "materialType": "PLASTIC",
-        "weight": 962
+        "materialType": "WOOD",
+        "weight": 22
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 484
       },
       {
         "materialType": "WOOD",
-        "weight": 615
+        "weight": 20
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 745
       }
     ]
   },
   {
-    "airshipType": "HELICOPTER",
+    "airshipType": "DRONE",
     "fuelType": "BATTERY",
-    "fuelCapacity": 19,
-    "categoryType": "COMMERCIAL",
+    "fuelCapacity": 3,
+    "categoryType": "MILITARY",
     "cabin": {
       "materialType": "WOOD",
-      "weight": 825
+      "weight": 764
     },
     "propellers": [
       {
         "materialType": "WOOD",
-        "weight": 210
-      },
-      {
-        "materialType": "STEEL",
-        "weight": 400
-      },
-      {
-        "materialType": "PLASTIC",
-        "weight": 604
+        "weight": 596
       }
     ],
     "wings": [
       {
-        "materialType": "WOOD",
-        "weight": 753
+        "materialType": "STEEL",
+        "weight": 925
       },
       {
-        "materialType": "WOOD",
-        "weight": 713
+        "materialType": "STEEL",
+        "weight": 795
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 416
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 983
       }
     ],
     "rockets": [
       {
         "materialType": "WOOD",
-        "weight": 987
+        "weight": 829
       }
     ]
   },
   {
     "airshipType": "SPACE_ROCKET",
-    "fuelType": "GASOLINE",
-    "fuelCapacity": 2,
+    "fuelType": "AIR_FUEL",
+    "fuelCapacity": 1,
     "categoryType": "PHOTOGRAPHY",
     "cabin": {
-      "materialType": "TITANIUM",
-      "weight": 356
+      "materialType": "STEEL",
+      "weight": 270
     },
     "propellers": [
       {
         "materialType": "PLASTIC",
-        "weight": 216
+        "weight": 790
       },
       {
-        "materialType": "TITANIUM",
-        "weight": 685
-      },
-      {
-        "materialType": "PLASTIC",
-        "weight": 900
-      },
-      {
-        "materialType": "WOOD",
-        "weight": 908
-      },
-      {
-        "materialType": "TITANIUM",
-        "weight": 427
-      },
-      {
-        "materialType": "TITANIUM",
-        "weight": 667
-      },
-      {
-        "materialType": "PLASTIC",
-        "weight": 21
+        "materialType": "STEEL",
+        "weight": 459
       }
     ],
     "wings": [
       {
+        "materialType": "PLASTIC",
+        "weight": 592
+      },
+      {
         "materialType": "TITANIUM",
-        "weight": 920
+        "weight": 320
       }
     ],
-    "rockets": []
+    "rockets": [
+      {
+        "materialType": "TITANIUM",
+        "weight": 379
+      }
+    ]
   },
   {
     "airshipType": "AIRPLANE",
-    "fuelType": "AIR_FUEL",
-    "fuelCapacity": 36,
+    "fuelType": "WATER",
+    "fuelCapacity": 19,
+    "categoryType": "MILITARY",
+    "cabin": {
+      "materialType": "TITANIUM",
+      "weight": 494
+    },
+    "propellers": [
+      {
+        "materialType": "STEEL",
+        "weight": 714
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 630
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 520
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 413
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 390
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 110
+      }
+    ],
+    "wings": [
+      {
+        "materialType": "PLASTIC",
+        "weight": 348
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 877
+      }
+    ],
+    "rockets": [
+      {
+        "materialType": "WOOD",
+        "weight": 409
+      }
+    ]
+  },
+  {
+    "airshipType": "AIRPLANE",
+    "fuelType": "BATTERY",
+    "fuelCapacity": 46,
     "categoryType": "PHOTOGRAPHY",
     "cabin": {
       "materialType": "STEEL",
-      "weight": 447
+      "weight": 404
+    },
+    "propellers": [
+      {
+        "materialType": "WOOD",
+        "weight": 564
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 419
+      }
+    ],
+    "wings": [
+      {
+        "materialType": "PLASTIC",
+        "weight": 127
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 682
+      }
+    ],
+    "rockets": [
+      {
+        "materialType": "STEEL",
+        "weight": 897
+      }
+    ]
+  },
+  {
+    "airshipType": "AIRPLANE",
+    "fuelType": "WATER",
+    "fuelCapacity": 27,
+    "categoryType": "PHOTOGRAPHY",
+    "cabin": {
+      "materialType": "STEEL",
+      "weight": 178
+    },
+    "propellers": [
+      {
+        "materialType": "TITANIUM",
+        "weight": 917
+      }
+    ],
+    "wings": [],
+    "rockets": []
+  },
+  {
+    "airshipType": "DRONE",
+    "fuelType": "BATTERY",
+    "fuelCapacity": 21,
+    "categoryType": "MILITARY",
+    "cabin": {
+      "materialType": "WOOD",
+      "weight": 330
     },
     "propellers": [],
     "wings": [],
     "rockets": [
       {
+        "materialType": "WOOD",
+        "weight": 415
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 632
+      },
+      {
         "materialType": "STEEL",
-        "weight": 181
-      },
-      {
-        "materialType": "PLASTIC",
-        "weight": 214
-      },
-      {
-        "materialType": "PLASTIC",
-        "weight": 377
+        "weight": 609
       }
     ]
   },
   {
-    "airshipType": "HELICOPTER",
-    "fuelType": "GASOLINE",
-    "fuelCapacity": 46,
-    "categoryType": "MILITARY",
+    "airshipType": "JET",
+    "fuelType": "WATER",
+    "fuelCapacity": 28,
+    "categoryType": "PHOTOGRAPHY",
     "cabin": {
-      "materialType": "WOOD",
-      "weight": 868
+      "materialType": "PLASTIC",
+      "weight": 479
     },
     "propellers": [
       {
+        "materialType": "PLASTIC",
+        "weight": 411
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 252
+      },
+      {
         "materialType": "WOOD",
-        "weight": 221
+        "weight": 596
       },
       {
         "materialType": "STEEL",
-        "weight": 746
+        "weight": 612
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 430
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 285
       }
     ],
     "wings": [
       {
+        "materialType": "STEEL",
+        "weight": 433
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 909
+      },
+      {
         "materialType": "PLASTIC",
-        "weight": 552
-      },
-      {
-        "materialType": "WOOD",
-        "weight": 942
-      },
-      {
-        "materialType": "WOOD",
-        "weight": 307
+        "weight": 258
       }
     ],
     "rockets": [
       {
-        "materialType": "PLASTIC",
-        "weight": 782
+        "materialType": "WOOD",
+        "weight": 24
       },
       {
-        "materialType": "STEEL",
-        "weight": 839
-      },
-      {
-        "materialType": "STEEL",
-        "weight": 90
+        "materialType": "TITANIUM",
+        "weight": 386
       }
     ]
   },
   {
-    "airshipType": "HELICOPTER",
+    "airshipType": "AIRPLANE",
     "fuelType": "AIR_FUEL",
-    "fuelCapacity": 47,
+    "fuelCapacity": 28,
     "categoryType": "COMMERCIAL",
     "cabin": {
-      "materialType": "TITANIUM",
-      "weight": 387
+      "materialType": "WOOD",
+      "weight": 880
     },
     "propellers": [
       {
+        "materialType": "PLASTIC",
+        "weight": 56
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 453
+      },
+      {
         "materialType": "WOOD",
-        "weight": 332
+        "weight": 759
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 323
       },
       {
         "materialType": "TITANIUM",
-        "weight": 352
+        "weight": 308
       }
     ],
     "wings": [
       {
         "materialType": "TITANIUM",
-        "weight": 513
+        "weight": 441
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 230
       },
       {
         "materialType": "STEEL",
@@ -254,25 +356,324 @@
       },
       {
         "materialType": "TITANIUM",
-        "weight": 796
-      },
-      {
-        "materialType": "TITANIUM",
-        "weight": 727
+        "weight": 930
       }
     ],
     "rockets": [
       {
-        "materialType": "WOOD",
-        "weight": 483
+        "materialType": "TITANIUM",
+        "weight": 746
       },
       {
-        "materialType": "WOOD",
-        "weight": 186
+        "materialType": "PLASTIC",
+        "weight": 518
+      }
+    ]
+  },
+  {
+    "airshipType": "DRONE",
+    "fuelType": "BATTERY",
+    "fuelCapacity": 8,
+    "categoryType": "MILITARY",
+    "cabin": {
+      "materialType": "PLASTIC",
+      "weight": 677
+    },
+    "propellers": [
+      {
+        "materialType": "PLASTIC",
+        "weight": 515
       },
       {
         "materialType": "STEEL",
-        "weight": 863
+        "weight": 240
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 938
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 185
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 811
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 46
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 313
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 874
+      }
+    ],
+    "wings": [
+      {
+        "materialType": "WOOD",
+        "weight": 441
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 450
+      }
+    ],
+    "rockets": []
+  },
+  {
+    "airshipType": "AIRPLANE",
+    "fuelType": "AIR_FUEL",
+    "fuelCapacity": 23,
+    "categoryType": "PHOTOGRAPHY",
+    "cabin": {
+      "materialType": "STEEL",
+      "weight": 341
+    },
+    "propellers": [],
+    "wings": [
+      {
+        "materialType": "PLASTIC",
+        "weight": 914
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 812
+      }
+    ],
+    "rockets": [
+      {
+        "materialType": "STEEL",
+        "weight": 759
+      }
+    ]
+  },
+  {
+    "airshipType": "HELICOPTER",
+    "fuelType": "DIESEL",
+    "fuelCapacity": 44,
+    "categoryType": "COMMERCIAL",
+    "cabin": {
+      "materialType": "TITANIUM",
+      "weight": 388
+    },
+    "propellers": [
+      {
+        "materialType": "WOOD",
+        "weight": 787
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 635
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 223
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 965
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 471
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 741
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 803
+      }
+    ],
+    "wings": [
+      {
+        "materialType": "TITANIUM",
+        "weight": 275
+      }
+    ],
+    "rockets": [
+      {
+        "materialType": "TITANIUM",
+        "weight": 194
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 667
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 278
+      }
+    ]
+  },
+  {
+    "airshipType": "HELICOPTER",
+    "fuelType": "AIR_FUEL",
+    "fuelCapacity": 29,
+    "categoryType": "PHOTOGRAPHY",
+    "cabin": {
+      "materialType": "STEEL",
+      "weight": 691
+    },
+    "propellers": [
+      {
+        "materialType": "STEEL",
+        "weight": 576
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 118
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 214
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 471
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 643
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 39
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 879
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 148
+      }
+    ],
+    "wings": [],
+    "rockets": [
+      {
+        "materialType": "TITANIUM",
+        "weight": 557
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 717
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 192
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 172
+      }
+    ]
+  },
+  {
+    "airshipType": "DRONE",
+    "fuelType": "AIR_FUEL",
+    "fuelCapacity": 49,
+    "categoryType": "PHOTOGRAPHY",
+    "cabin": {
+      "materialType": "STEEL",
+      "weight": 299
+    },
+    "propellers": [
+      {
+        "materialType": "TITANIUM",
+        "weight": 673
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 49
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 658
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 59
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 678
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 34
+      },
+      {
+        "materialType": "TITANIUM",
+        "weight": 876
+      }
+    ],
+    "wings": [
+      {
+        "materialType": "STEEL",
+        "weight": 758
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 854
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 20
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 685
+      }
+    ],
+    "rockets": []
+  },
+  {
+    "airshipType": "AIRPLANE",
+    "fuelType": "GASOLINE",
+    "fuelCapacity": 36,
+    "categoryType": "COMMERCIAL",
+    "cabin": {
+      "materialType": "WOOD",
+      "weight": 338
+    },
+    "propellers": [
+      {
+        "materialType": "WOOD",
+        "weight": 605
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 52
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 587
+      }
+    ],
+    "wings": [],
+    "rockets": [
+      {
+        "materialType": "TITANIUM",
+        "weight": 568
+      },
+      {
+        "materialType": "PLASTIC",
+        "weight": 827
+      },
+      {
+        "materialType": "WOOD",
+        "weight": 183
+      },
+      {
+        "materialType": "STEEL",
+        "weight": 494
       }
     ]
   }

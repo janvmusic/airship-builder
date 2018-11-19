@@ -5,6 +5,7 @@ import com.airshipbuilder.model.parts.Cabin;
 import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.type.AirshipCategoryType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpaceRocket extends Airship {
@@ -12,7 +13,7 @@ public class SpaceRocket extends Airship {
     private List<Rocket> _rockets;
     private Cabin _cabin;
 
-    public SpaceRocket(List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
+    private SpaceRocket(List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
         super(_fuelType, _airshipCategoryType, _fuelCapacity);
         _rockets = rockets;
         _cabin = cabin;
@@ -37,7 +38,7 @@ public class SpaceRocket extends Airship {
     }
 
     public static class SpaceRocketBuilder {
-        private List<Rocket> _rockets;
+        private List<Rocket> _rockets = new ArrayList<>();
         private Cabin _cabin;
         private FuelType _fuelType;
         private int _fuelCapacity;
@@ -55,8 +56,8 @@ public class SpaceRocket extends Airship {
             return this;
         }
 
-        public SpaceRocketBuilder addRockets(List<Rocket> rockets) {
-            _rockets = rockets;
+        public SpaceRocketBuilder addRockets(Rocket rocket) {
+            _rockets.add(rocket);
             return this;
         }
 

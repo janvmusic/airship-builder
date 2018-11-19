@@ -6,16 +6,17 @@ public enum AirshipPartType {
     CABIN("cabin"),
     PROPELLERS("propellers"),
     ROCKET("rockets"),
-    WINGS("wings");
+    WINGS("wings"),
+    FUEL_TYPE("fuelType"),
+    FUEL_CAPACITY("fuelCapacity"),
+    MATERIAL_TYPE("materialType"),
+    AIRSHIP_CATEGORY("categoryType"),
+    AIRSHIP_TYPE("airshipType");
 
     private String _partName;
 
     AirshipPartType(String partName) {
         _partName = partName;
-    }
-
-    public String getPartName() {
-        return _partName;
     }
 
     public static Optional<AirshipPartType> getAirshipTypeFromString(String text) {
@@ -25,5 +26,9 @@ public enum AirshipPartType {
             }
         }
         return Optional.empty();
+    }
+
+    public String getPartName() {
+        return _partName;
     }
 }
