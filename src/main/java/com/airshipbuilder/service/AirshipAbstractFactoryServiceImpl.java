@@ -37,7 +37,6 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                 return createSpaceRocket(airshipJson);
             default:
                 System.out.println("Not valid option");
-
         }
 
         return null;
@@ -102,13 +101,6 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
             AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
 
             switch (partType) {
-                case WINGS:
-                    JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object wingElements : wingElementsJson) {
-                        Wing wing = partFactoryService.createWing((JSONObject) wingElements);
-                        droneBuilder.addWing(wing);
-                    }
-                    break;
                 case PROPELLERS:
                     JSONArray propellerElementsJson = (JSONArray) inputValues.get(airshipPartType);
                     for (Object propellerElements : propellerElementsJson) {
@@ -121,6 +113,13 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     for (Object rocketElements : rocketElementsJson) {
                         Rocket rocket = partFactoryService.createRocket((JSONObject) rocketElements);
                         droneBuilder.addRocket(rocket);
+                    }
+                    break;
+                case WINGS:
+                    JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
+                    for (Object wingElements : wingElementsJson) {
+                        Wing wing = partFactoryService.createWing((JSONObject) wingElements);
+                        droneBuilder.addWing(wing);
                     }
                     break;
                 case FUEL_TYPE:
@@ -154,17 +153,17 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
             AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
 
             switch (partType) {
+                case CABIN:
+                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
+                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
+                    helicopterBuilder.addCabin(cabin);
+                    break;
                 case PROPELLERS:
                     JSONArray propellerElementsJson = (JSONArray) inputValues.get(airshipPartType);
                     for (Object propellerElements : propellerElementsJson) {
                         Propeller propeller = partFactoryService.createPropeller((JSONObject) propellerElements);
                         helicopterBuilder.addPropeller(propeller);
                     }
-                    break;
-                case CABIN:
-                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
-                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
-                    helicopterBuilder.addCabin(cabin);
                     break;
                 case FUEL_TYPE:
                     String fuelTypeString = (String) inputValues.get(airshipPartType);
@@ -198,13 +197,6 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
 
 
             switch (partType) {
-                case WINGS:
-                    JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
-                    for (Object wingElements : wingElementsJson) {
-                        Wing wing = partFactoryService.createWing((JSONObject) wingElements);
-                        jetBuilder.addWings(wing);
-                    }
-                    break;
                 case CABIN:
                     JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
                     Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
@@ -215,6 +207,13 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
                     for (Object rocketElements : rocketElementsJson) {
                         Rocket rocket = partFactoryService.createRocket((JSONObject) rocketElements);
                         jetBuilder.addRockets(rocket);
+                    }
+                    break;
+                case WINGS:
+                    JSONArray wingElementsJson = (JSONArray) inputValues.get(airshipPartType);
+                    for (Object wingElements : wingElementsJson) {
+                        Wing wing = partFactoryService.createWing((JSONObject) wingElements);
+                        jetBuilder.addWings(wing);
                     }
                     break;
                 case FUEL_TYPE:
@@ -248,17 +247,17 @@ public class AirshipAbstractFactoryServiceImpl implements AirshipAbstractFactory
             AirshipPartType partType = AirshipPartType.getAirshipTypeFromString(airshipPartType);
 
             switch (partType) {
+                case CABIN:
+                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
+                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
+                    spaceRocketBuilder.addCabin(cabin);
+                    break;
                 case ROCKET:
                     JSONArray rocketElementsJson = (JSONArray) inputValues.get(airshipPartType);
                     for (Object rocketElements : rocketElementsJson) {
                         Rocket rocket = partFactoryService.createRocket((JSONObject) rocketElements);
                         spaceRocketBuilder.addRockets(rocket);
                     }
-                    break;
-                case CABIN:
-                    JSONObject cabinElementsJson = (JSONObject) inputValues.get(airshipPartType);
-                    Cabin cabin = partFactoryService.createCabin(cabinElementsJson);
-                    spaceRocketBuilder.addCabin(cabin);
                     break;
                 case FUEL_TYPE:
                     String fuelTypeString = (String) inputValues.get(airshipPartType);
