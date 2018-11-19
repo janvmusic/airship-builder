@@ -1,7 +1,9 @@
 package com.airshipbuilder.model.airship;
 
+import com.airshipbuilder.model.fuel.FuelType;
 import com.airshipbuilder.model.parts.Cabin;
 import com.airshipbuilder.model.parts.Rocket;
+import com.airshipbuilder.model.type.AirshipCategoryType;
 
 import java.util.List;
 
@@ -10,7 +12,8 @@ public class SpaceRocket extends Airship {
     private List<Rocket> _rockets;
     private Cabin _cabin;
 
-    public SpaceRocket(List<Rocket> rockets, Cabin cabin) {
+    public SpaceRocket(List<Rocket> rockets, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
+        super(_fuelType, _airshipCategoryType, _fuelCapacity);
         _rockets = rockets;
         _cabin = cabin;
     }
@@ -36,6 +39,9 @@ public class SpaceRocket extends Airship {
     public static class SpaceRocketBuilder {
         private List<Rocket> _rockets;
         private Cabin _cabin;
+        private FuelType _fuelType;
+        private int _fuelCapacity;
+        private AirshipCategoryType _airshipCategoryType;
 
         private SpaceRocketBuilder() {
         }
@@ -54,8 +60,23 @@ public class SpaceRocket extends Airship {
             return this;
         }
 
+        public SpaceRocketBuilder withFuelType(FuelType fuelType) {
+            _fuelType = fuelType;
+            return this;
+        }
+
+        public SpaceRocketBuilder withFuelCapacity(int fuelCapacity) {
+            _fuelCapacity = fuelCapacity;
+            return this;
+        }
+
+        public SpaceRocketBuilder withCategory(AirshipCategoryType airshipCategoryType) {
+            _airshipCategoryType = airshipCategoryType;
+            return this;
+        }
+
         public SpaceRocket build() {
-            return new SpaceRocket(_rockets, _cabin);
+            return new SpaceRocket(_rockets, _cabin, _fuelCapacity, _fuelType, _airshipCategoryType);
         }
     }
 }

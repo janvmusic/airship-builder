@@ -1,9 +1,12 @@
 package com.airshipbuilder.model.airship;
 
+import com.airshipbuilder.model.fuel.FuelType;
 import com.airshipbuilder.model.parts.Propeller;
 import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
+import com.airshipbuilder.model.type.AirshipCategoryType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Drone extends Airship {
@@ -11,7 +14,8 @@ public class Drone extends Airship {
     private List<Propeller> _propellers;
     private List<Rocket> _rockets;
 
-    private Drone(List<Wing> wings, List<Propeller> propellers, List<Rocket> rockets) {
+    private Drone(List<Wing> wings, List<Propeller> propellers, List<Rocket> rockets, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
+        super(_fuelType, _airshipCategoryType, _fuelCapacity);
         _wings = wings;
         _propellers = propellers;
         _rockets = rockets;
@@ -40,9 +44,12 @@ public class Drone extends Airship {
     }
 
     public static class DroneBuilder {
-        private List<Wing> _wings;
-        private List<Propeller> _propellers;
-        private List<Rocket> _rockets;
+        private List<Wing> _wings = new ArrayList<>();
+        private List<Propeller> _propellers = new ArrayList<>();
+        private List<Rocket> _rockets = new ArrayList<>();
+        private int _fuelCapacity;
+        private FuelType _fuelType;
+        private AirshipCategoryType _airshipCategoryType;
 
         private DroneBuilder() {
         }
@@ -51,23 +58,39 @@ public class Drone extends Airship {
             return new DroneBuilder();
         }
 
-        public DroneBuilder addWings(List<Wing> wings) {
-            _wings = wings;
+        public DroneBuilder addWing(Wing wings) {
+            _wings.add(wings);
             return this;
         }
 
-        public DroneBuilder addPropellers(List<Propeller> propellers) {
-            _propellers = propellers;
+        public DroneBuilder addPropeller(Propeller propeller) {
+            _propellers.add(propeller);
             return this;
         }
 
-        public DroneBuilder addRockets(List<Rocket> rockets) {
-            _rockets = rockets;
+        public DroneBuilder addRocket(Rocket rocket) {
+            _rockets.add(rocket);
+            return this;
+        }
+
+
+        public DroneBuilder withFuelType(FuelType fuelType) {
+            _fuelType = fuelType;
+            return this;
+        }
+
+        public DroneBuilder withFuelCapacity(int fuelCapacity) {
+            _fuelCapacity = fuelCapacity;
+            return this;
+        }
+
+        public DroneBuilder withCategory(AirshipCategoryType airshipCategoryType) {
+            _airshipCategoryType = airshipCategoryType;
             return this;
         }
 
         public Drone build() {
-            return new Drone(_wings, _propellers, _rockets);
+            return new Drone(_wings, _propellers, _rockets, _fuelCapacity, _fuelType, _airshipCategoryType);
         }
     }
 }

@@ -2,10 +2,12 @@
   '{{repeat(5, 15)}}',
   {
     airshipType: '{{random("AIRPLANE", "DRONE", "HELICOPTER", "JET","SPACE_ROCKET")}}',
-    fuelType: '{{random("AIR_FUEL", "BATTERY", "DIESEL", "GASOLINE","WATER)}}',
+    fuelType: '{{random("AIR_FUEL", "BATTERY", "DIESEL", "GASOLINE","WATER")}}',
+    fuelCapacity: '{{integer(1, 50)}}',
+    categoryType: '{{random("COMMERCIAL", "MILITARY", "PHOTOGRAPHY")}}',
     cabin: {
       materialType: '{{random("PLASTIC", "STEEL", "TITANIUM", "WOOD")}}',
-      cabinWeight: '{{integer(1, 999)}}'
+      weight: '{{integer(1, 999)}}'
     },
     propellers: [
       '{{repeat(0,8)}}',

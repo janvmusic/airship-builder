@@ -1,9 +1,12 @@
 package com.airshipbuilder.model.airship;
 
+import com.airshipbuilder.model.fuel.FuelType;
 import com.airshipbuilder.model.parts.Cabin;
 import com.airshipbuilder.model.parts.Propeller;
 import com.airshipbuilder.model.parts.Wing;
+import com.airshipbuilder.model.type.AirshipCategoryType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Airplane extends Airship {
@@ -12,7 +15,8 @@ public class Airplane extends Airship {
     private List<Propeller> _propellers;
     private Cabin _cabin;
 
-    private Airplane(List<Wing> wings, List<Propeller> propellers, Cabin cabin) {
+    private Airplane(List<Wing> wings, List<Propeller> propellers, Cabin cabin, int _fuelCapacity, FuelType _fuelType, AirshipCategoryType _airshipCategoryType) {
+        super(_fuelType, _airshipCategoryType, _fuelCapacity);
         _wings = wings;
         _propellers = propellers;
         _cabin = cabin;
@@ -41,9 +45,12 @@ public class Airplane extends Airship {
     }
 
     public static class AirplaneBuilder {
-        private List<Wing> _wings;
-        private List<Propeller> _propellers;
+        private List<Wing> _wings = new ArrayList<>();
+        private List<Propeller> _propellers = new ArrayList<>();
         private Cabin _cabin;
+        private FuelType _fuelType;
+        private int _fuelCapacity;
+        private AirshipCategoryType _airshipCategoryType;
 
         private AirplaneBuilder() {
 
@@ -53,13 +60,13 @@ public class Airplane extends Airship {
             return new AirplaneBuilder();
         }
 
-        public AirplaneBuilder addWings(List<Wing> wings) {
-            _wings = wings;
+        public AirplaneBuilder addWings(Wing wing) {
+            _wings.add(wing);
             return this;
         }
 
-        public AirplaneBuilder addPropellers(List<Propeller> propellers) {
-            _propellers = propellers;
+        public AirplaneBuilder addPropellers(Propeller propeller) {
+            _propellers.add(propeller);
             return this;
         }
 
@@ -68,8 +75,23 @@ public class Airplane extends Airship {
             return this;
         }
 
+        public AirplaneBuilder withFuelType(FuelType fuelType) {
+            _fuelType = fuelType;
+            return this;
+        }
+
+        public AirplaneBuilder withFuelCapacity(int fuelCapacity) {
+            _fuelCapacity = fuelCapacity;
+            return this;
+        }
+
+        public AirplaneBuilder withCategory(AirshipCategoryType airshipCategoryType) {
+            _airshipCategoryType = airshipCategoryType;
+            return this;
+        }
+
         public Airplane build() {
-            return new Airplane(_wings, _propellers, _cabin);
+            return new Airplane(_wings, _propellers, _cabin, _fuelCapacity, _fuelType, _airshipCategoryType);
         }
     }
 }
