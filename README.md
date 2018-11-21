@@ -27,4 +27,4 @@
 
 ### Utilities
 - [JSON Airship Generator](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/seeds/json_generator.json)
-- [JSON Generator](json-generator.com)
+- [JSON Generator](https://json-generator.com)
