@@ -12,3 +12,9 @@
 - Builder
 - Factory
 - Abstract Factory
+
+### Sorting
+- By Rank
+- By Price
+- By Weight
+- By Fuel

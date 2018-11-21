@@ -2,6 +2,8 @@ package com.airshipbuilder.model.parts;
 
 import com.airshipbuilder.model.materials.MaterialType;
 
+import java.util.StringJoiner;
+
 public class Propeller {
     private int _propellerWeight;
     private MaterialType _materialType;
@@ -21,5 +23,13 @@ public class Propeller {
 
     public int getTotalPrice() {
         return _materialType.getUnitPrice() * _propellerWeight;
+    }
+
+    @Override
+    public String toString () {
+        return new StringJoiner(", ", Propeller.class.getSimpleName() + "[", "]") //
+                .add("propellerWeight=" + _propellerWeight) //
+                .add("materialType=" + _materialType) //
+                .toString();
     }
 }

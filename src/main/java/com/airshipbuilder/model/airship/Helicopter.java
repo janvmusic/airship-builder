@@ -9,6 +9,7 @@ import com.airshipbuilder.model.type.AirshipCategoryType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Helicopter extends Airship {
 
@@ -80,5 +81,19 @@ public class Helicopter extends Airship {
             return new Helicopter(_propellers, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
                     getRank());
         }
+    }
+
+    @Override
+    public String toString () {
+        return new StringJoiner(", ", Helicopter.class.getSimpleName() + "[", "]") //
+                .add("rank=" + getRank()) //
+                .add("airshipCategoryType=" + getAirshipType()) //
+                .add("totalPrice=" + getTotalPrice()) //
+                .add("weight=" + getWeight()) //
+                .add("fuelType=" + getFuelType()) //
+                .add("fuelCapacity=" + getFuelCapacity()) //
+                .add("numberOfPropellers=" + _propellers.size()) //
+                .add("cabin=" + _cabin) //
+                .toString();
     }
 }

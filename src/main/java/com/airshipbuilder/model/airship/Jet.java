@@ -9,6 +9,7 @@ import com.airshipbuilder.model.type.AirshipCategoryType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Jet extends Airship {
     private List<Wing> _wings;
@@ -90,5 +91,19 @@ public class Jet extends Airship {
             return new Jet(_wings, _rockets, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
                     getRank());
         }
+    }
+
+    @Override
+    public String toString () {
+        return new StringJoiner(", ", Jet.class.getSimpleName() + "[", "]") //
+                .add("rank=" + getRank()) //
+                .add("airshipCategoryType=" + getAirshipType()) //
+                .add("totalPrice=" + getTotalPrice()) //
+                .add("weight=" + getWeight()) //
+                .add("fuelType=" + getFuelType()) //
+                .add("fuelCapacity=" + getFuelCapacity()) //
+                .add("numberOfRockets=" + _rockets.size()) //
+                .add("cabin=" + _cabin) //
+                .toString();
     }
 }
