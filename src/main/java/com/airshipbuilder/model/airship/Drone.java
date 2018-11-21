@@ -5,6 +5,7 @@ import com.airshipbuilder.model.parts.Propeller;
 import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
 import com.airshipbuilder.model.type.AirshipCategoryType;
+import com.airshipbuilder.model.type.AirshipType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,16 +24,24 @@ public class Drone extends Airship {
         _rockets = rockets;
     }
 
+    @Override
     public List<Propeller> getPropellers() {
         return _propellers;
     }
 
+    @Override
     public List<Rocket> getRockets() {
         return _rockets;
     }
 
+    @Override
     public List<Wing> getWings() {
         return _wings;
+    }
+
+    @Override
+    public AirshipType getAirshipType(){
+        return AirshipType.DRONE;
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.airshipbuilder.model.parts.Propeller;
 import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
 import com.airshipbuilder.model.type.AirshipCategoryType;
+import com.airshipbuilder.model.type.AirshipType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +24,19 @@ public class SpaceRocket extends Airship {
         _cabin = cabin;
     }
 
+    @Override
     public Cabin getCabin() {
         return _cabin;
     }
 
-    public List<Rocket> getRocket() {
+    @Override
+    public List<Rocket> getRockets() {
         return _rockets;
+    }
+
+    @Override
+    public AirshipType getAirshipType(){
+        return AirshipType.SPACE_ROCKET;
     }
 
     @Override

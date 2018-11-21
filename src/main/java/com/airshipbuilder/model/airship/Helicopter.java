@@ -6,6 +6,7 @@ import com.airshipbuilder.model.parts.Propeller;
 import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
 import com.airshipbuilder.model.type.AirshipCategoryType;
+import com.airshipbuilder.model.type.AirshipType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +24,19 @@ public class Helicopter extends Airship {
         _cabin = cabin;
     }
 
+    @Override
     public Cabin getCabin() {
         return _cabin;
     }
 
+    @Override
     public List<Propeller> getPropellers() {
         return _propellers;
+    }
+
+    @Override
+    public AirshipType getAirshipType(){
+        return AirshipType.HELICOPTER;
     }
 
     @Override
