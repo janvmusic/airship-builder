@@ -20,7 +20,7 @@
 *.rar
 
 # Maven
-taget/
+target/
 
 # Intellij Idea
 .idea/
