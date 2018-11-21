@@ -18,3 +18,13 @@
 - By Price
 - By Weight
 - By Fuel
+
+### Input
+[Airships to Build](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/json/airship_examples.json)
+
+### Output
+[Final Result](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/results/output.txt)
+
+### Utilities
+[JSON Airship Generator]()
+[https://json-generator.com](https://json-generator.com)
