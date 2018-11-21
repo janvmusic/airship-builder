@@ -20,11 +20,11 @@
 - By Fuel
 
 ### Input
-[Airships to Build](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/json/airship_examples.json)
+- [Airships to Build](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/json/airship_examples.json)
 
 ### Output
-[Final Result](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/results/output.txt)
+- [Final Result](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/results/output.txt)
 
 ### Utilities
-[JSON Airship Generator](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/results/output.txt)
-[JSON Generator](https://json-generator.com)
+- [JSON Airship Generator](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/results/output.txt)
+- [JSON Generator](https://json-generator.com)
