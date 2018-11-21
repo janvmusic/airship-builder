@@ -5,7 +5,7 @@
 
 ### Tech Stack
 - Maven
-- Java 8
+- Java 8+
 - JSON
 
 ### Patterns
