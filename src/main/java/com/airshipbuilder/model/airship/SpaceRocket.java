@@ -6,9 +6,11 @@ import com.airshipbuilder.model.parts.Propeller;
 import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
 import com.airshipbuilder.model.type.AirshipCategoryType;
+import com.airshipbuilder.model.type.AirshipType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class SpaceRocket extends Airship {
 
@@ -22,12 +24,19 @@ public class SpaceRocket extends Airship {
         _cabin = cabin;
     }
 
+    @Override
     public Cabin getCabin() {
         return _cabin;
     }
 
-    public List<Rocket> getRocket() {
+    @Override
+    public List<Rocket> getRockets() {
         return _rockets;
+    }
+
+    @Override
+    public AirshipType getAirshipType(){
+        return AirshipType.SPACE_ROCKET;
     }
 
     @Override
@@ -83,5 +92,19 @@ public class SpaceRocket extends Airship {
             return new SpaceRocket(_rockets, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
                     getRank());
         }
+    }
+
+    @Override
+    public String toString () {
+        return new StringJoiner(", ", SpaceRocket.class.getSimpleName() + "[", "]") //
+                .add("rank=" + getRank()) //
+                .add("airshipCategoryType=" + getAirshipType()) //
+                .add("totalPrice=" + getTotalPrice()) //
+                .add("weight=" + getWeight()) //
+                .add("fuelType=" + getFuelType()) //
+                .add("fuelCapacity=" + getFuelCapacity()) //
+                .add("numberOfRockets=" + _rockets.size()) //
+                .add("cabin=" + _cabin) //
+                .toString();
     }
 }

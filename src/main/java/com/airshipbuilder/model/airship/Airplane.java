@@ -6,9 +6,11 @@ import com.airshipbuilder.model.parts.Propeller;
 import com.airshipbuilder.model.parts.Rocket;
 import com.airshipbuilder.model.parts.Wing;
 import com.airshipbuilder.model.type.AirshipCategoryType;
+import com.airshipbuilder.model.type.AirshipType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Airplane extends Airship {
 
@@ -24,16 +26,24 @@ public class Airplane extends Airship {
         _cabin = cabin;
     }
 
+    @Override
     public Cabin getCabin() {
         return _cabin;
     }
 
+    @Override
     public List<Propeller> getPropellers() {
         return _propellers;
     }
 
+    @Override
     public List<Wing> getWings() {
         return _wings;
+    }
+
+    @Override
+    public AirshipType getAirshipType() {
+        return AirshipType.AIRPLANE;
     }
 
     @Override
@@ -92,5 +102,20 @@ public class Airplane extends Airship {
             return new Airplane(_wings, _propellers, _cabin, getFuelCapacity(), getFuelType(), getAirshipCategoryType(),
                     getRank());
         }
+    }
+
+    @Override
+    public String toString () {
+        return new StringJoiner(", ", Airplane.class.getSimpleName() + "[", "]") //
+                .add("rank=" + getRank()) //
+                .add("airshipCategoryType=" + getAirshipType()) //
+                .add("totalPrice=" + getTotalPrice()) //
+                .add("weight=" + getWeight()) //
+                .add("fuelType=" + getFuelType()) //
+                .add("fuelCapacity=" + getFuelCapacity()) //
+                .add("numberOfWings=" + _wings.size()) //
+                .add("numberOfPropellers=" + _propellers.size()) //
+                .add("cabin=" + _cabin) //
+                .toString();
     }
 }
