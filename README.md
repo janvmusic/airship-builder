@@ -26,5 +26,5 @@
 [Final Result](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/results/output.txt)
 
 ### Utilities
-[JSON Airship Generator]()
-[https://json-generator.com](https://json-generator.com)
+[JSON Airship Generator](https://github.com/janvmusic/airship-builder/blob/master/src/main/resources/results/output.txt)
+[JSON Generator](https://json-generator.com)
